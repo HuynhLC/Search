@@ -25,19 +25,27 @@ public class SearchProgramming extends Menu<String>
 
     @Override
     public void execute(int n) {
-        algorithm.buddleSort(array);
-        library.display(array);
-        int value = library.getInt("\nEnter number to find: ", 1, 100);
+        
         switch (n) {
-            case 1:
+            case 1: {
+                int value = client();
                 System.out.println("Found value: " + value + " at index: " + algorithm.linearSearch(array, value));
                 break;
-            case 2:
+            }
+            case 2: {
+                int value = client();
                 System.out.println("Found value: " + value + " at index: " + algorithm.binarySearch(array, value));
                 break;
+            }
             case 3:
                 System.exit(0);
                 break;
                 }
             }
+    public int client() {
+        algorithm.buddleSort(array);
+        library.display(array);
+        int value = library.getInt("\nEnter number to find: ", 1, 100);
+        return valune;
+        }
     }
